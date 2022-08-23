@@ -23,6 +23,7 @@ function App() {
         {/* <Route path='/signin' element={<signIn/>}/> */}
         <Route path='/products' element={''}/>
         <Route path='/products/:genre' element={''}/>
+        <Route path='/products/:genre/:name' element={''}/>
       </Routes>
   );
 }
