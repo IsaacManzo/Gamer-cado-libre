@@ -6,24 +6,25 @@ class Product extends S.Model{}
 Product.init({
     name:{
         type:S.STRING,
-    },
-    description:{
-        type:S.STRING
+        allowNull:false
     },
     description:{
         type:S.TEXT
     },
     price:{
-        type:S.INTEGER
+        type:S.INTEGER,
+        allowNull:false
     },
     valoration:{
-        type:S.STRING
+        type:S.INTEGER,
+        defaultValue:0
     },
-    age:{
-        type:S.INTEGER
+    esrb:{
+        type:S.INTEGER,
     },
     genre:{
-        type:S.STRING
+        type:S.STRING,
+        defaultValue:'unknown'
     },
 },{sequelize:db,modelName:'product'})
 
