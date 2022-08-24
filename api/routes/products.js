@@ -17,12 +17,9 @@ router.get('/:genre',(req,res)=>{
 })
 
 
-router.delete('/:product',(req,res)=>{
-    Product.findOne({where:{name:req.params.product}})
-    .then(productMatched=>{
-        Product.destroy(productMatched)
+router.delete('/:productID',(req,res)=>{
+        Product.destroy(productMatched,{where:{id:req.params.productID}})
         .then(()=>res.sendStatus(201))
-    })
 })
 
 router.post('/',(req,res)=>{
@@ -31,3 +28,8 @@ router.post('/',(req,res)=>{
         res.status(204).send(productCreated)
     })
 })
+
+router.put('/:productID',(req,res)=>{
+    Product.update(req.body,{where:{id:req.params.productID}})
+})
+
