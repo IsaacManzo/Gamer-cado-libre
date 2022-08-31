@@ -79,7 +79,6 @@ export default function PrimarySearchAppBar() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
-  const {pathname} = useLocation()
   const [search, setSearch] = React.useState("");
 
   const handleSearch = (e) => {
